@@ -1,0 +1,36 @@
+.nav_bar_container {
+  box-sizing: border-box;
+  border-bottom: 1px solid red;
+  padding: 2rem;
+}
+
+.nav_bar_List {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.nav_bar_List > p {
+  font-family: "Open Sans", sans-serif;
+}
+
+.nav_bar_icons___ {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2rem;
+  cursor: pointer;
+}
+
+.nav_bar_icons___ > p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  opacity: 0.5;
+}
+
+.nav_bar_icons___ > p:hover {
+  opacity: 1;
+  cursor: pointer;
+}

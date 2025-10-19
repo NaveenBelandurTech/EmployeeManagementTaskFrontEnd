@@ -1,0 +1,41 @@
+.switchContainer {
+  width: 100%;
+  margin: 2rem;
+}
+
+.switch___ {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 1.5rem;
+}
+
+.registerText_ {
+  font-family: "Open Sans", sans-serif;
+  cursor: pointer;
+  box-sizing: border-box;
+  padding: 0.7rem;
+  opacity: 0.5;
+}
+
+.registerText_:hover {
+  border-bottom: 1px solid red;
+
+  box-sizing: border-box;
+  opacity: 1;
+}
+
+.registerText___ {
+  font-family: "Open Sans", sans-serif;
+  cursor: pointer;
+  padding: 0.7rem;
+  box-sizing: border-box;
+  opacity: 0.5;
+}
+
+.registerText___:hover {
+  border-bottom: 1px solid red;
+
+  box-sizing: border-box;
+  opacity: 1;
+}

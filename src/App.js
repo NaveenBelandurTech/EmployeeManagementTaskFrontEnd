@@ -1,25 +1,61 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Form from "./Component/Common/Form";
+import EmployeeForm from "./Component/Common/EmployeeForm/Employee";
+import TaskForm from "./Component/Common/TaskForm/Task";
+import NavBar from "./Component/NavBar";
+import Home from "./Component/Home";
+import { Routes, Route, Navigate } from "react-router-dom";
 
-function App() {
+const ProtectedRoute = ({ children }) => {
+  const isAuthented = localStorage.getItem("Auth");
+  return isAuthented ? children : <Navigate to="/" />;
+};
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Form component={true} />} />
+
+
+        <Route
+          path="/Home"
+          element={
+            <ProtectedRoute>
+              <>
+                <NavBar />
+                <Home />
+              </>
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/employee"
+          element={
+            <ProtectedRoute>
+              <>
+                <NavBar />
+                <EmployeeForm register={true} />
+              </>
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/task"
+          element={
+            <ProtectedRoute>
+              <>
+                <NavBar />
+                <TaskForm register={true} />
+              </>
+            </ProtectedRoute>
+          }
+        />
+      </Routes>
+    </>
   );
-}
+};
 
 export default App;
